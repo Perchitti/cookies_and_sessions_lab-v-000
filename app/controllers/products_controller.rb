@@ -5,8 +5,9 @@ def index
 end
 
 def add
-  cart << params[:product]
-  render :index
+  @product = params[:product]
+  cart << @product
+  redirect_to '/'
 end
 
 
