@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
 
   def add_to_cart
     @item = Item.find(params[:id])
+    cart = session[:cart] || []
     cart << @item.id
+
+    session[:cart] = cart
   end
 
 
